@@ -21,14 +21,14 @@ func (b *Beacon) GetActiveValidators(slot any) (r any) {
 	if err != nil {
 		log.Println("Error: ", err)
 	}
-	log.Println("active validators", r)
+	// log.Println("active validators", r)
 	return r
 }
 
 func (b *Beacon) GetAttestationStatus(commResp any) (r any) {
 	slot := ""
 	if commRespStruct, ok := commResp.(*CommitteeResponse); ok {
-		if commRespStruct.Data != nil && len(commRespStruct.Data) > 0 {
+		if commRespStruct != nil && commRespStruct.Data != nil && len(commRespStruct.Data) > 0 && commRespStruct.Data[0].Slot != "" {
 			slot = commRespStruct.Data[0].Slot
 		}
 	} else {
@@ -42,6 +42,12 @@ func (b *Beacon) GetAttestationStatus(commResp any) (r any) {
 	if err != nil {
 		log.Println("Error: ", err)
 	}
-	log.Println("AttestationResponse", r)
+
+	// if attestationStruct, ok := r.(AttestationResponse); ok {
+	// 	if attestationStruct.Data != nil && len(attestationStruct.Data) > 0 {
+	// 		log.Println("AttestationResponse", attestationStruct.Data)
+	// 	}
+	// }
+
 	return r
 }

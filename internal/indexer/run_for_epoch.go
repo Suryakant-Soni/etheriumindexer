@@ -19,10 +19,15 @@ func RunForEpoch(epoch int, wg *sync.WaitGroup) {
 		return b.GetAttestationStatus(a)
 	})
 
+	if AttestationStatusCh != nil {
+		log.Print("")
+	}
 	// filenames := pipeline(webpImages, saveToDisk)
-
+	counter := 1
 	for in := range AttestationStatusCh {
-		log.Printf("\nchannel %v", in)
+	log.Printf("\nchannel %v, counter %v", in, counter)
+	// log.Println("counter", counter)
+	counter++
 	}
 
 }
