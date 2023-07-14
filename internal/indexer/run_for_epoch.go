@@ -23,10 +23,9 @@ func RunForEpoch(epoch int, wg *sync.WaitGroup) {
 		log.Print("")
 	}
 	// filenames := pipeline(webpImages, saveToDisk)
-	counter := 1
+
 	for in := range AttestationStatusCh {
-		log.Printf("\naggregation bits %v, counter %v", in, counter)
-		counter++
+		log.Printf("\naggregation bits %v ", in)
 	}
 }
 
