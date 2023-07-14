@@ -1,0 +1,6 @@
+{
+    "etherium_config": "/eth/v1/config/spec",
+    "get_genesis_time": "/eth/v1/beacon/genesis",
+    "get_active_validators": "/eth/v1/beacon/states/%v/committees",
+    "get_attestation_status": "/eth/v1/beacon/blocks/%v/attestations"
+}
