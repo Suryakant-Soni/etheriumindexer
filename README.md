@@ -38,7 +38,6 @@ Since we need indexing operations the data is best to be saved in key value mode
 
 1. Make sure docker is installed in system
 2. to build the image - make build-dev
-3. to run the container instance make run-devFor realtime indexing will get the slot incoming event trigerred at every 12 second which will need -
+3. to run the container instance make run-dev
 
-a. addition of validators attestation - missed and total in the cumulative list per validator and per total epochs
-b. as per logic -> substraction of oldest slot validators or substraction of the oldest epoch and validators for every slot from the cumulative.
+
