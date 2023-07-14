@@ -26,10 +26,8 @@ func RunForEpoch(epoch int, wg *sync.WaitGroup) {
 	counter := 1
 	for in := range AttestationStatusCh {
 	log.Printf("\nchannel %v, counter %v", in, counter)
-	// log.Println("counter", counter)
 	counter++
 	}
-
 }
 
 func supplySlots(epoch int) <-chan any {

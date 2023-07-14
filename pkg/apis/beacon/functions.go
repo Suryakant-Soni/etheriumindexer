@@ -32,8 +32,10 @@ func (b *Beacon) GetAttestationStatus(commResp any) (r any) {
 			slot = commRespStruct.Data[0].Slot
 		}
 	} else {
-		// data is not of type MyStruct
 		fmt.Println("Unknown type")
+		return nil
+	}
+	if slot == "" {
 		return nil
 	}
 
